@@ -6,6 +6,7 @@ body{
 
 .main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -16,14 +17,13 @@ body{
 
 .main .formulario{
     width: 345px;
+    height: 361px;
     background-color: var(--cor-caixa-avaliacao);
     border-radius: 22px;
     padding: 20px;
-    position: absolute;
-    z-index: 1;
 }
 
-.main .formulario .icone-estrela{
+.main .formulario .primeira-parte .icone-estrela{
     padding: 12px;
     background-color: hsla(217, 12%, 63%, 0.2);
     border-radius: 50%;
@@ -40,14 +40,18 @@ body{
     margin: 22px 0;
 }
 
-.main .radio{
+.main .formulario .primeira-parte.ativa{
+    display: block;
+}
+
+.main .formulario .primeira-parte .avaliacao{
     position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.main .radio label{
+.formulario .primeira-parte .avaliacao label{
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -56,37 +60,36 @@ body{
     height: 40px;
 }
 
-.main .radio label span{
+.formulario .primeira-parte .avaliacao label span{
     width: 100%;
     height: 100%;
     background-color: hsla(217, 12%, 63%, 0.2);
     border-radius: 50%;
     text-align: center;
     line-height: 42px;
-    z-index: 1;
 }
 
-.main .radio label input{
+.primeira-parte .avaliacao label input{
     all: unset;
     color: var(--cor-texto-secundario);
 }
 
-.main .radio label input:checked + span{
+.primeira-parte .avaliacao label input:checked + span{
     background-color: var(--cor-texto-secundario);
     color: var(--cor-texto-primario);
 }
 
-.main .radio label input:active + span{
+.primeira-parte .avaliacao label input:active + span{
     background-color: var(--cor-destaque);
     color: var(--cor-texto-primario);
 }
 
-.main .formulario button{
+.main .formulario .primeira-parte button{
     border: none;
     cursor: pointer;
 }
 
-.main .formulario .enviar{
+.main .formulario .primeira-parte .enviar{
     width: 100%;
     background-color: var(--cor-destaque);
     color: var(--cor-texto-primario);
@@ -97,20 +100,37 @@ body{
     margin: 25px 0 30px;
 }
 
-.main .formulario button:active{
+.formulario .primeira-parte button:active{
     color: var(--cor-destaque);
     background-color: var(--cor-texto-primario);
 }
 
-.main .agradecimento{
-    display: flex;
-    flex-direction: column;
-    position: absolute;
+.main .formulario .inativa{
+    display: none;
 }
 
-.main .agradecimento .msg-nota{
+.main .formulario .segunda-parte .agradecimento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.formulario .segunda-parte .agradecimento .img-agradecimento{
+    width: 50%;
+    margin: 15px 0 10px;
+}
+
+.formulario .segunda-parte .agradecimento .msg-nota{
     color: var(--cor-destaque);
     background-color: hsla(217, 12%, 63%, 0.2);
     border-radius: 20px;
-    padding: 10px;
+    padding: 8px;
+    margin: 20px 0 10px;
+    font-weight: 400;
+    font-size: 15px;
+}
+
+.formulario .segunda-parte .agradecimento p{
+    margin: -10px 0 20px;
+    text-align: center;
 }
