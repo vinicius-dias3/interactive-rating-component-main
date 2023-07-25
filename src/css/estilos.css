@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+body{
+    background-color: var(--cor-body);
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.main .caixa-avaliacao{
+    width: 345px;
+    background-color: var(--cor-caixa-avaliacao);
+    border-radius: 22px;
+    padding: 20px;
+    color: var(--cor-texto-secundario);
+    font-family: 'Overpass', sans-serif;
+}
+
+.main .caixa-avaliacao .icone-estrela{
+    padding: 12px;
+    /* background-color: var(--cor-fonte-principal); */
+    background-color: hsla(217, 12%, 63%, 0.2);
+    border-radius: 50%;
+}
+
+.main .caixa-avaliacao .titulo{
+    color: var(--cor-texto-primario);
+    font-weight: 700;
+    margin: 20px 0;
+}
+
+.main .caixa-avaliacao p{
+    font-size: 14px;
+    margin: 22px 0;
+}
+
+.main .caixa-avaliacao .notas{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.main .caixa-avaliacao .notas .nota{
+    background-color: hsla(217, 12%, 63%, 0.2);
+    color: var(--cor-texto-secundario);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 3px;
+}
+
+.caixa-avaliacao .notas .nota.escolha{
+    background-color: var(--cor-texto-secundario);
+    color: var(--cor-texto-primario);
+}
+
+.caixa-avaliacao .notas .nota:active{
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-primario);
+}
+
+.main .caixa-avaliacao button{
+    border: none;
+    cursor: pointer;
+}
+
+.main .caixa-avaliacao .submit{
+    width: 100%;
+    background-color: var(--cor-destaque);
+    color: var(--cor-texto-primario);
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 10px;
+    border-radius: 18px;
+    margin: 25px 0 30px;
+}
+
+.main .caixa-avaliacao button:active{
+    color: var(--cor-destaque);
+    background-color: var(--cor-texto-primario);
+}

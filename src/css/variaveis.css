@@ -1,0 +1,7 @@
+:root {
+    --cor-body: hsl(216, 12%, 8%);
+    --cor-caixa-avaliacao: hsl(213, 19%, 18%);
+    --cor-texto-primario: hsl(0, 0%, 100%);
+    --cor-texto-secundario: hsl(216, 12%, 54%);
+    --cor-destaque: hsl(25, 97%, 53%);
+}
