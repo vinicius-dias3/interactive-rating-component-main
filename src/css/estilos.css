@@ -12,7 +12,6 @@ body{
     height: 100vh;
     color: var(--cor-texto-secundario);
     font-family: 'Overpass', sans-serif;
-    position: relative;
 }
 
 .main .formulario{
@@ -21,6 +20,7 @@ body{
     background-color: var(--cor-caixa-avaliacao);
     border-radius: 22px;
     padding: 20px;
+    overflow: hidden;
 }
 
 .main .formulario .primeira-parte .icone-estrela{
@@ -40,12 +40,7 @@ body{
     margin: 22px 0;
 }
 
-.main .formulario .primeira-parte.ativa{
-    display: block;
-}
-
 .main .formulario .primeira-parte .avaliacao{
-    position: relative;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -100,13 +95,20 @@ body{
     margin: 25px 0 30px;
 }
 
-.formulario .primeira-parte button:active{
+.main .formulario .primeira-parte button:active{
     color: var(--cor-destaque);
     background-color: var(--cor-texto-primario);
 }
 
 .main .formulario .inativa{
-    display: none;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height .01s linear, opacity .05s linear;
+}
+
+.main .formulario .ativa {
+    opacity: 1;
+    transition: all .7s linear;
 }
 
 .main .formulario .segunda-parte .agradecimento{

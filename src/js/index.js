@@ -6,15 +6,14 @@ const segundaParte = document.querySelector('.segunda-parte')
 btnSubmit.addEventListener('click', (event) => {
     event.preventDefault()
     const arrayInputs = Array.from(inputs)
-    // console.log(arrayInputs);
     inputSelecionado = arrayInputs.find(function(input) {
         return input.checked
     })
-    console.log (inputSelecionado)
-    let notaAtribuida = inputSelecionado.value
-    console.log(notaAtribuida)
+    const notaAtribuida = inputSelecionado.value
     primeiraParte.classList.remove('ativa')
     primeiraParte.classList.add('inativa')
     segundaParte.classList.remove('inativa')
     segundaParte.classList.add('ativa')
+    const mensagemNota = document.querySelector('.msg-nota')
+    mensagemNota.innerHTML = `You selected ${notaAtribuida} out of 5`
 })
