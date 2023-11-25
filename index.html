@@ -11,48 +11,29 @@
 <link rel="stylesheet" href="./src/css/estilos.css">
 </head>
 <body>
-  <div class="main" >
-    <form class="formulario" action="#" method="get">
-      <div class="primeira-parte ativa">
-        <img class="icone-estrela" src="./src/images/icon-star.svg" alt="ícone estrela">
-        <h2 class="titulo">How did we do?</h2>
-        <p>Please let us know how we did with your support request. All feedback is appreciated
-        to help us improve our offering!</p>
-        
-        <div class="avaliacao">
-          <label>
-            <input type="radio" name="nota" value="1">
-            <span>1</span>
-          </label>
-          <label>
-            <input type="radio" name="nota" value="2">
-            <span>2</span>
-          </label>
-          <label>
-            <input type="radio" name="nota" value="3">
-            <span>3</span>
-          </label>
-          <label>
-            <input type="radio" name="nota" value="4">
-            <span>4</span>
-          </label>
-          <label>
-            <input type="radio" name="nota" value="5">
-            <span>5</span>
-          </label>
-        </div>
-        <button type="submit" class="enviar">submit</button>
-      </div>
-      <div class="segunda-parte inativa">
-        <div class="agradecimento">
-          <img class="img-agradecimento" src="./src/images/illustration-thank-you.svg" alt="">
-          <h4 class="msg-nota">You selected VARIAVEL out of 5</h4>
-          <h2 class="titulo">Thank you!</h2>
-          <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
-        </div>
-      </div>
+  <main class="card main">
+    <img class="icon-star" src="./src/images/icon-star.svg" alt="icon star">
+    <h1 class="title">How did we do?</h1>
+    <p>Please let us know how we did with your support request. All feedback is appreciated
+    to help us improve our offering!</p>
+    
+    <div class="buttons">
+      <button class="button" value="1">1</button>
+      <button class="button" value="2">2</button>
+      <button class="button" value="3">3</button>
+      <button class="button" value="4">4</button>
+      <button class="button" value="5">5</button>
+    </div>
+    <form id="form" action="#" method="get">
+      <button type="submit">submit</button>
     </form>
-  </div>
+  </main>
+  <section class="card thank-you inactive">
+      <img src="./src/images/illustration-thank-you.svg" alt="">
+      <span class="span">You selected VARIAVEL out of 5</span>
+      <h3>Thank you!</h3>
+      <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+  </section>
 
   <script type="text/javascript" src="./src/js/index.js"></script>
 </body>

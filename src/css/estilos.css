@@ -1,90 +1,70 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
 
 body{
-    background-color: var(--cor-body);
-}
-
-.main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: var(--cor-texto-secundario);
     font-family: 'Overpass', sans-serif;
+    background-color: var(--cor-body);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
 }
 
-.main .formulario{
-    width: 345px;
-    height: 361px;
+.card{
+    color: var(--cor-texto-secundario);
+    width: 400px;
+    height: 410px;
     background-color: var(--cor-caixa-avaliacao);
     border-radius: 22px;
     padding: 20px;
-    overflow: hidden;
+    position: absolute;
+    opacity: 1;
+    z-index: 1;
+    transition: all .5s linear;
 }
 
-.main .formulario .primeira-parte .icone-estrela{
+.main .icon-star{
     padding: 12px;
-    background-color: hsla(217, 12%, 63%, 0.2);
+    background-color: hsla(217, 12%, 63%, 0.15);
     border-radius: 50%;
 }
 
-.main .titulo{
+.main .title{
     color: var(--cor-texto-primario);
     font-weight: 700;
     margin: 20px 0;
 }
 
 .main p{
-    font-size: 14px;
+    font-size: 15px;
     margin: 22px 0;
 }
 
-.main .formulario .primeira-parte .avaliacao{
+.main .buttons{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
 }
 
-.formulario .primeira-parte .avaliacao label{
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-}
-
-.formulario .primeira-parte .avaliacao label span{
-    width: 100%;
-    height: 100%;
-    background-color: hsla(217, 12%, 63%, 0.2);
+.main .buttons .button{
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    text-align: center;
-    line-height: 42px;
-}
-
-.primeira-parte .avaliacao label input{
-    all: unset;
+    background-color: rgba(149, 158, 172, 0.15);
     color: var(--cor-texto-secundario);
 }
 
-.primeira-parte .avaliacao label input:checked + span{
+.buttons .button:hover{
     background-color: var(--cor-texto-secundario);
     color: var(--cor-texto-primario);
 }
 
-.primeira-parte .avaliacao label input:active + span{
+.buttons .button.selected{
     background-color: var(--cor-destaque);
     color: var(--cor-texto-primario);
 }
 
-.main .formulario .primeira-parte button{
-    border: none;
-    cursor: pointer;
-}
-
-.main .formulario .primeira-parte .enviar{
+.main form button[type=submit]{
     width: 100%;
     background-color: var(--cor-destaque);
     color: var(--cor-texto-primario);
@@ -93,46 +73,48 @@ body{
     padding: 10px;
     border-radius: 18px;
     margin: 25px 0 30px;
+    letter-spacing: 3px;
 }
 
-.main .formulario .primeira-parte button:active{
+.main form button[type=submit]:hover{
+    background-color: #fff;
     color: var(--cor-destaque);
-    background-color: var(--cor-texto-primario);
 }
 
-.main .formulario .inativa{
-    max-height: 0;
-    opacity: 0;
-    transition: max-height .01s linear, opacity .05s linear;
-}
-
-.main .formulario .ativa {
-    opacity: 1;
-    transition: all .7s linear;
-}
-
-.main .formulario .segunda-parte .agradecimento{
+.thank-you{
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    justify-content: center;
+    transition: all .7s linear;
 }
 
-.formulario .segunda-parte .agradecimento .img-agradecimento{
-    width: 50%;
-    margin: 15px 0 10px;
+.inactive{
+    z-index: -1;
+    opacity: 0;
 }
 
-.formulario .segunda-parte .agradecimento .msg-nota{
+.thank-you img{ margin: 25px 0 36px;}
+
+.thank-you .span{
     color: var(--cor-destaque);
-    background-color: hsla(217, 12%, 63%, 0.2);
+    background-color: rgba(149, 158, 172, 0.15);
     border-radius: 20px;
-    padding: 8px;
-    margin: 20px 0 10px;
+    padding: 8px 20px;
+    margin-bottom: 32px;
     font-weight: 400;
     font-size: 15px;
 }
 
-.formulario .segunda-parte .agradecimento p{
+.thank-you h3{
+    color: var(--cor-texto-primario);
+    margin-bottom: 25px;
+}
+
+.thank-you p{
+    font-size: 15px;
     margin: -10px 0 20px;
     text-align: center;
+    width: 340px;
 }

@@ -1,19 +1,30 @@
-const btnSubmit = document.querySelector('.enviar')
-const inputs = document.querySelectorAll("input[name='nota']")
-const primeiraParte = document.querySelector('.primeira-parte')
-const segundaParte = document.querySelector('.segunda-parte')
+const buttons = document.querySelectorAll('.buttons .button')
+const mainCard = document.querySelector('.main')
+const thankYouCard = document.querySelector('.thank-you')
+const form = document.querySelector('#form')
 
-btnSubmit.addEventListener('click', (event) => {
+form.addEventListener('submit', (event)=>{
     event.preventDefault()
-    const arrayInputs = Array.from(inputs)
-    inputSelecionado = arrayInputs.find(function(input) {
-        return input.checked
-    })
-    const notaAtribuida = inputSelecionado.value
-    primeiraParte.classList.remove('ativa')
-    primeiraParte.classList.add('inativa')
-    segundaParte.classList.remove('inativa')
-    segundaParte.classList.add('ativa')
-    const mensagemNota = document.querySelector('.msg-nota')
-    mensagemNota.innerHTML = `You selected ${notaAtribuida} out of 5`
+    let optionSelected = document.querySelector('.selected')
+    let span = document.querySelector('.thank-you .span')
+    if(!optionSelected) return;
+
+    mainCard.classList.add('inactive')
+    thankYouCard.classList.remove('inactive')
+    span.textContent = `You selected ${optionSelected.value} out of 5`
 })
+
+buttons.forEach(button=> {
+    button.addEventListener('click', ()=>{
+        let searchingSelected = document.querySelector('.selected')
+        if(searchingSelected) removeSelected()
+        button.classList.add('selected')
+    })
+})
+    
+    
+function removeSelected(){
+    buttons.forEach(button=>{
+        button.classList.remove('selected')
+    })
+}
